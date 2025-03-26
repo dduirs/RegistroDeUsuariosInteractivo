@@ -302,7 +302,9 @@ form:has(input:focus-within) #tecladoVirtual {
     display: flex;
 }
 
-#tecladoVirtual>span {
+/* #tecladoVirtual>span { */
+#tecladoVirtual>button {
+    border: none;
     font-weight: 600;
     border-radius: 6px;
     background-color: rgb(247, 252, 255);
@@ -316,7 +318,8 @@ form:has(input:focus-within) #tecladoVirtual {
     box-shadow: -2px -1px 1px 2px rgb(175, 220, 253);
 }
 
-#tecladoVirtual>span:hover {
+/* #tecladoVirtual>span:hover { */
+#tecladoVirtual>button:hover {
     cursor: pointer;
     /* background-color: rgb(175, 220, 253); */
     background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.822) 50%, white 99%);
@@ -340,8 +343,10 @@ form:has(input:focus-within) #tecladoVirtual {
 
 }
 
-#tecladoVirtual>span:focus,
-#tecladoVirtual>span:focus-within {
+/* #tecladoVirtual>span:focus,
+#tecladoVirtual>span:focus-within { */
+/* #tecladoVirtual>button:focus, */
+#tecladoVirtual>button:focus-within {
     box-shadow: -1px -1px 1px 1px #000000b9;
     padding-left: 0px;
     padding-right: 0px;
@@ -352,9 +357,11 @@ form:has(input:focus-within) #tecladoVirtual {
     z-index: 1;
     margin-top: 5px;
     color: white;
-}
-
-#tecladoVirtual>span:focus,
-#tecladoVirtual>span:focus-within {
     background-color: rgb(107, 207, 247);
 }
+
+/* #tecladoVirtual>span:focus,
+#tecladoVirtual>span:focus-within { */
+/* #tecladoVirtual>button:focus,
+#tecladoVirtual>button:focus-within {
+} */
