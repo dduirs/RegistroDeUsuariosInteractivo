@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forumulario para registro de usuarios - Interactivo</title>
+    <base href="./" target="_parent">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<noscript>
+    <header>Tu navegador no soporta JavaScript</header>
+    <form>
+    </form>
+</noscript>
+<body>
+    <div>
+        <main>
+            <header>
+                <h2>Registrar usuario</h2>
+            </header>
+            <form id="registro" action="inicio.html" method="POST" target="_parent">
+                <div id="labels">
+                    <label for="nombre">Nombre:</label>
+
+                    <label for="correo">Correo electrónico:</label> 
+                    
+                    <label for="contrasena">Contraseña:</label>
+
+                    <label for="contrasena2">Confirmar contraseña:</label>
+
+                </div>
+                <div id="inputs">
+                    <input type="text" id="nombre" name="nombre" placeholder=" "
+                    autocomplete="given-name" required="required" autocapitalize="words" title="Escribe tu nombre completo" minlength="5" tabindex="1" 
+                    autofocus pattern="/([a-zA-Z]{2,20}[\s{2,}]){3}/">
+                     
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.es"
+                        autocomplete="email" required="required" title="Escribe un correo electrónico válido"
+                        tabindex="2" pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$">
+                      
+                    <input type="password" id="contrasena" name="contrasena" required="required" title="La contraseña debe contener al menos 8 caracteres, con al menos 
+uno de cada uno de los siguientes cuatro grupos de caracteres:
+
+            Mayúsculas: A a Z
+            Minúsculas: a a z
+            Numéricos: 0 a 9
+            Caracteres especiales: !#$%&'()*+,-./:;<=>?@[\]^_`{|}~" minlength="8" pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$"
+                    tabindex="3">
+                    <button type="button" id="revealPassword">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 4C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4Zm0 12.5c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24
+                                5-5 5Zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3Z" fill="black">
+                            </path>
+                        </svg>
+                    </button>
+                    
+                    <span id="passwordMismatchError"></span>
+                     
+                    <input type="password" id="contrasena2" name="contrasena2" required="required" minlength="8" title="Las contraseñas deben ser iguales" 
+                    tabindex="4" pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
+
+                </div>
+            </form>
+            <footer id="formFooter">
+                <input form="registro" type="button" id="resetForm" value="Restablecer" tabindex="9">
+                <button form="registro" type="submit" id="enviar" tabindex="10">Registrarse</button>
+            </footer>
+            <div id="tecladoVirtual">
+        
+            </div>
+        </main>
+    </div>
+    
+    <footer>
+        <div id="toTop">
+            <a href="FormularioRegistro.html#">Ir al principio</a>
+        </div>
+        <address>
+            <span>&copy;</span>
+            David D
+            <span><a href="https://github.com/dduirs" target="_blank">GitHub</a></span>
+            <span><a href="mailto:224G3584@live.uem.es?subject=Oferta de trabajo&body=Hola, David:%0D%0DEnhorabuena por"
+                    target="_blank">Email</a></span>
+        </address>
+    </footer>
+    <script src="validacion.js" defer="defer"></script>
+    <script src="tecladoVirtual.js" defer="defer"></script>
+</body>
+
+</html>

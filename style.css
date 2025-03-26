@@ -1,0 +1,360 @@
+body {
+    min-width: 350px;
+    background: linear-gradient(to bottom, black 10%, white);
+    color: black;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 70vh;
+    margin-top: 3vh;
+    z-index: 0;
+}
+
+form {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: row;
+    font-size: smaller;
+    margin-top: 50px;
+    width: 90%;
+    max-width: 430px;
+    min-width: 300px;
+    text-align: center;
+    padding: 20px;
+    padding-top: 105px;
+    padding-bottom: 92px;
+    border-radius: 19px;
+    background-color: white;
+    /* box-shadow: 0px 5px 30px -0px white; */
+    box-shadow: -0.5px 0px 1px 2px #9c2a2afd;
+    z-index: 1;
+}
+
+h2 {
+    /* font-family: monospace;
+    font-size: x-large; */
+    position: relative;
+    top: 120px;
+    align-self: center;
+    margin: 5px;
+    color: black;
+    z-index: 2;
+}
+
+#inputs {
+    min-width: 80px;
+    flex-shrink: 0;
+    margin-left: 30px;
+}
+
+#labels {
+    text-align: right;
+    margin-right: 3px;
+    width: 39%;
+    flex-shrink: 0;
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    height: 26px;
+    padding-bottom: 5px;
+    padding-top: 14px;
+    margin-bottom: 19px;
+    /* font-family: monospace;
+    font-size: medium; */
+}
+
+#inputs input:not([type=checkbox]):focus,
+#inputs select:focus {
+    background-color: #a1f3ea57;
+    outline: rgba(156, 42, 42, 0.993) 2px solid;
+}
+
+#inputs input:not([type=checkbox]):hover,
+#inputs select:hover {
+    outline: rgba(156, 42, 42, 0.993) 2px solid;
+}
+
+#inputs select:hover {
+    border: rgba(156, 42, 42, 0.993) 2px solid;
+}
+
+#inputs input:not([type=checkbox]),
+#inputs select {
+    display: block;
+    height: 27px;
+    width: 200px;
+    padding-bottom: 4px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    margin-top: 8px;
+    text-indent: 15px;
+}
+
+#inputs input:not([type=date]):valid,
+#inputs select:valid {
+    background-color: rgb(26 136 26 / 14%);
+    outline: #45950f 1px solid;
+}
+
+#inputs input:invalid,
+#inputs select:invalid {
+    background-color: #ffffff00;
+    outline: rgba(156, 42, 42, 0.993) 1px solid;
+}
+
+#cumpleanos {
+    background-color: #ffffff00;
+    outline: rgba(156, 42, 42, 0.993) 1px solid;
+}
+
+#inputs select {
+    height: 32px;
+    width: 202px;
+    cursor: pointer;
+}
+
+#inputs select:open {
+    background: #a1f3ea57;
+}
+
+form:has(input[id="nombre"]:focus) label[for="nombre"],
+form:has(input[id="correo"]:focus) label[for="correo"],
+form:has(input[id="contrasena"]:focus) label[for="contrasena"],
+form:has(input[id="contrasena2"]:focus) label[for="contrasena2"] {
+    font-weight: 700;
+}
+
+
+#contrasena2 {
+    margin-top: -30px;
+}
+
+#cumpleanos {
+    margin-top: -13px;
+}
+
+#contrasena,
+#contrasena2 {
+    z-index: 9;
+    font-size: medium;
+    width: 162px;
+    text-indent: 5px;
+}
+
+#contrasena2:invalid:hover {
+    outline: rgba(156, 42, 42, 0.993) 2px solid;
+}
+
+#correo:valid,
+#contrasena:valid,
+#contrasena2:valid {
+    background-color: rgba(26, 136, 26, 0.571);
+    outline: #45950f 3px solid;
+}
+
+#correo:invalid,
+#contrasena:invalid,
+#contrasena2:invalid {
+    background-color: #ff00002b;
+    outline: rgba(156, 42, 42, 0.993) 1px solid;
+}
+
+#passwordMismatchError {
+    margin-left: 5px;
+    width: 135px;
+    position: absolute;
+    color: white;
+    background-color: rgb(156, 42, 42, 0.993);
+    display: block;
+    opacity: 0;
+    margin-top: -31px;
+    padding-top: 6px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 7px;
+    z-index: 9;
+}
+
+#revealPassword {
+    position: absolute;
+    background: transparent;
+    border: none;
+    scale: 110%;
+    margin-left: 66px;
+    margin-top: -60px;
+    cursor: pointer;
+    border-radius: 80px;
+    height: 25px;
+    width: 35px;
+}
+
+#inputs:has(#revealPassword:hover) #contrasena,
+#inputs:has(#revealPassword:hover) #contrasena2 {
+    background: rgba(0, 150, 136, 0.1);
+}
+
+#resetForm,
+#enviar {
+    width: 120px;
+    /* color: white; */
+    padding: 5px;
+    background-color: rgba(156, 42, 42, 0);
+    border-radius: 8px;
+}
+
+#resetForm {
+    margin-right: 20px;
+}
+
+#formFooter {
+    align-self: center;
+    margin-top: -67px;
+    z-index: 9;
+}
+
+#formFooter>* {
+    cursor: pointer;
+    z-index: 9;
+    border: 1px solid black;
+    box-shadow: 0px 3px 5px 1px #000000a8;
+}
+
+#formFooter>*:hover {
+    /* scale: 110%; */
+    border: 1px solid white;
+    box-shadow: 0px 2px 15px 3px #000000a8;
+}
+
+footer {
+    justify-items: center;
+}
+
+footer:has(address) {
+    margin-top: 30%;
+}
+
+#toTop,
+address {
+    position: relative;
+    scale: 90%;
+    padding-bottom: 20px;
+    min-width: 20%;
+    left: clamp(25%, 28%, 45%);
+}
+
+/* #toTop {
+    padding: 10px;
+} */
+
+#toTop>a{
+    margin-left: 35px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(247, 252, 255);
+    color: black;
+    box-shadow: -1px 1px 1px 2px rgb(125, 196, 247);
+}
+#toTop>a:hover{
+    background: linear-gradient(to bottom right, grey 0%, white 1%, rgba(0, 0, 0, 0.822) 20% 80%, white 99%, grey);
+    color: white;
+}
+#toTop>a:visited{
+    color: black
+}
+
+#tecladoVirtual {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.53) 50%, white 90%);
+    /* background: #9c2a2a69; */
+    /* background: #9c2a2a12; */
+    border-radius: 10px;
+    margin-top: -20px;
+    margin-bottom: 100px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 450px;
+    width: 90%;
+    max-width: 440px;
+    min-width: 400px;
+    z-index: 5;
+    justify-content: center;
+    padding-left: 8px;
+    box-shadow: inset 0px 0px 50px 30px #9c2a2a4f,
+        inset 0px 0px 10px 10px #ffffff,
+        -0.5px -0.5px 1px 1px #9c2a2afd;
+}
+
+form:has(input:focus) #tecladoVirtual,
+form:has(input:focus-within) #tecladoVirtual {
+    display: flex;
+}
+
+#tecladoVirtual>span {
+    font-weight: 600;
+    border-radius: 6px;
+    background-color: rgb(247, 252, 255);
+    margin: 2px;
+    height: 40px;
+    width: 38px;
+    margin-top: 4px;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    box-shadow: -2px -1px 1px 2px rgb(175, 220, 253);
+}
+
+#tecladoVirtual>span:hover {
+    cursor: pointer;
+    /* background-color: rgb(175, 220, 253); */
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.822) 50%, white 99%);
+    /* scale: 150%; */
+    color: rgb(239, 248, 255);
+    /* font-weight: 800; */
+    font-size: larger;
+    /* margin-right: -2px; */
+    margin-top: 2px;
+    padding-top: 2px;
+    /* padding-left: 6px; */
+    padding-right: -4px;
+    /* box-shadow: -2px -1px 15px 5px #000000b9,
+        -2px -1px 1px 2px rgb(175, 220, 253);
+    ; */
+    /* text-shadow: -2px -1px 1px rgb(0, 255, 110),
+        -4px -2px 1px rgb(0, 217, 255),
+        -5px -3px 2px rgb(255, 0, 13),
+        -7px -5px 2px rgb(243, 0, 247),
+        -9px -7px 2px rgb(246, 255, 0); */
+
+}
+
+#tecladoVirtual>span:focus,
+#tecladoVirtual>span:focus-within {
+    box-shadow: -1px -1px 1px 1px #000000b9;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 36px;
+    height: 38px;
+    margin-left: 1px;
+    margin-right: 5px;
+    z-index: 1;
+    margin-top: 5px;
+    color: white;
+}
+
+#tecladoVirtual>span:focus,
+#tecladoVirtual>span:focus-within {
+    background-color: rgb(107, 207, 247);
+}
