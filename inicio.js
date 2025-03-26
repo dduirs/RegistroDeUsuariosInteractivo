@@ -1,7 +1,7 @@
-// var passwordLogin = document.getElementById("contrasenaLogin");
+// let passwordLogin = document.getElementById("contrasenaLogin");
 // passwordLogin.setAttribute("style","color:green");
 
-// var passwordView = document.getElementById("revealPassword");
+// let passwordView = document.getElementById("revealPassword");
 
 // function ensenarContrasenar(){
     
@@ -23,8 +23,8 @@
 //     ensenarContrasenar();
 // });
 
-// var email = document.getElementById("correo");
-// var passwordLoginLabel = document.getElementById("passwordLoginLabel");
+// let email = document.getElementById("correo");
+// let passwordLoginLabel = document.getElementById("passwordLoginLabel");
 
 // email.addEventListener('blur',()=>{
 //     if(passwordLogin.value !== null || passwordLogin.value !== ""){
@@ -36,8 +36,8 @@
 
 // email.addEventListener('focusout',()=>
 //     {
-//     var email = document.getElementById("correo");
-//     var emailLabel = document.getElementById("correoLabel");
+//     let email = document.getElementById("correo");
+//     let emailLabel = document.getElementById("correoLabel");
 
 //     if(email.value === localStorage.getItem("correo")){
 //         emailLabel.innerText = localStorage.getItem("nombre");
@@ -51,7 +51,7 @@
 //     }
 // });
 
-// var formSendBtn = document.getElementById("enviar");
+// let formSendBtn = document.getElementById("enviar");
 
 // email.addEventListener('keypress', function (e) {
 //     if (e.key === 'Enter') {
@@ -67,7 +67,7 @@
 
 // formSendBtn.addEventListener('click',(e)=>
 //     {
-//     // var email = document.getElementById("correo");
+//     // let email = document.getElementById("correo");
 //     // if(document.forms[0].checkValidity()){
 //     //     if(email.value === localStorage.getItem("correo")){
 

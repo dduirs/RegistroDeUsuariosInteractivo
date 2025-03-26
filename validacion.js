@@ -1,15 +1,15 @@
 // "use strict";   // The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
-                // With strict mode, you can not, for example, use undeclared variables.
+                // With strict mode, you can not, for example, use undeclared letiables.
 
 // alert("Entra tus detalles para registrar usuario nuevo.");
 
 // usar POST no GET
 
 // "use strict";
-// var formElement1 = document.forms[0].elements[0];
+// let formElement1 = document.forms[0].elements[0];
 // formElement1.setAttribute("style","color:blue");
 
-// var miVentana;
+// let miVentana;
 // function abrir() { miVentana = window.open( "", "Log in",
 //     "height=200,width=700,location=yes,resizable=yes,scrollbars=yes" );
 // }
@@ -17,10 +17,10 @@
 
 // confirm("Do you want to log in? "+location.pathname);
 
-var passwordView = document.getElementById("revealPassword");
-var password = document.getElementById("contrasena");
-var password2 = document.getElementById("contrasena2");
-var resetBtn = document.getElementById("resetForm");
+const passwordView = document.getElementById("revealPassword");
+// let password = document.getElementById("contrasena");
+// let password2 = document.getElementById("contrasena2");
+const resetBtn = document.getElementById("resetForm");
 
 function ensenarContrasenar(){
     
@@ -67,17 +67,17 @@ errorPassword.textContent = "No coinciden";
  }
 }
 
-password2.addEventListener('blur',()=>{
-    comprobarPasswordsMatch();
-    });
+// password2.addEventListener('blur',()=>{
+//     comprobarPasswordsMatch();
+//     });
 
     // Note: Input restrictions are not foolproof, and JavaScript provides many ways to add illegal input. 
     // To safely restrict input, it must also be checked by the receiver (the server)! 
 
-// var formElement2 = document.getElementById("nombre").form;
+// let formElement2 = document.getElementById("nombre").form;
 // formElement2.elements[1].setAttribute("style","color:red");
 
-// var nombre = document.getElementById("nombre");
+// let nombre = document.getElementById("nombre");
 
 // nombre.addEventListener('focusout',()=>{
 //     if((/^\s{2}|[^a-zA-Z]/.test(nombre.value))){ // \s{2}|[^a-zA-Z]
@@ -89,7 +89,7 @@ password2.addEventListener('blur',()=>{
 //     }
 // });
 
-// var birthday = document.getElementById("cumpleanos");
+// let birthday = document.getElementById("cumpleanos");
 
 // // birthday.setCustomValidity("noCambiado");
 
@@ -174,11 +174,11 @@ resetBtn.addEventListener('click', ()=>{
     };
 });
 
-var formSendBtn = document.getElementById("enviar");
+let formSendBtn = document.getElementById("enviar");
 formSendBtn.addEventListener('click',()=>
     {
-    // var formValid = true;
-    // var a = 0;
+    // let formValid = true;
+    // let a = 0;
     password2.blur();
         if(document.forms[0].checkValidity()){
             alert("Los datos se han enviado correctamente");
@@ -190,7 +190,7 @@ formSendBtn.addEventListener('click',()=>
     //         // break;
     //     }
     //     a++;
-    // // for(var element in document.forms[0].elements){
+    // // for(let element in document.forms[0].elements){
     // //     if(element.checkValidity()){
     // //         alert("Los datos son validos "+a);
     // //     }

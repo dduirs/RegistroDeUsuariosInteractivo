@@ -132,7 +132,11 @@ label {
 form:has(input[id="nombre"]:focus) label[for="nombre"],
 form:has(input[id="correo"]:focus) label[for="correo"],
 form:has(input[id="contrasena"]:focus) label[for="contrasena"],
-form:has(input[id="contrasena2"]:focus) label[for="contrasena2"] {
+form:has(input[id="contrasena2"]:focus) label[for="contrasena2"],
+form:has(input[id="nombre"]:focus-within) label[for="nombre"],
+form:has(input[id="correo"]:focus-within) label[for="correo"],
+form:has(input[id="contrasena"]:focus-within) label[for="contrasena"],
+form:has(input[id="contrasena2"]:focus-within) label[for="contrasena2"] {
     font-weight: 700;
 }
 
@@ -243,6 +247,7 @@ footer {
 
 footer:has(address) {
     margin-top: 30%;
+    margin-bottom: 100px;
 }
 
 #toTop,
@@ -258,29 +263,44 @@ address {
     padding: 10px;
 } */
 
-#toTop>a{
+#toTop>a {
     margin-left: 35px;
     padding: 10px;
     border-radius: 10px;
     background-color: rgb(247, 252, 255);
     color: black;
     box-shadow: -1px 1px 1px 2px rgb(125, 196, 247);
+    text-decoration-line: none;
 }
-#toTop>a:hover{
+
+#toTop>a:hover,
+#toTop>a:visited:hover {
     background: linear-gradient(to bottom right, grey 0%, white 1%, rgba(0, 0, 0, 0.822) 20% 80%, white 99%, grey);
+    background: linear-gradient(to bottom, rgb(244, 103, 103) 0%, rgba(255, 255, 255, 0.849) 1%, rgba(0, 0, 0, 0.822) 20% 80%, rgba(133, 81, 81, 0.543) 99%, grey);
     color: white;
 }
-#toTop>a:visited{
+
+#toTop>a:visited {
     color: black
 }
 
-#tecladoVirtual {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.53) 50%, white 90%);
+#tecladoDiv {
+    /* border-radius: 10px;*/
+    margin-top: -20px;
+    margin-bottom: 30px;
+    padding: 5px;
+    display: flex;
+    z-index: 5;
+    justify-content: center;
+    padding-left: 8px;
+}
+
+.teclados {
     /* background: #9c2a2a69; */
     /* background: #9c2a2a12; */
     border-radius: 10px;
     margin-top: -20px;
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
     padding: 5px;
     display: flex;
     flex-direction: row;
@@ -292,18 +312,109 @@ address {
     z-index: 5;
     justify-content: center;
     padding-left: 8px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.422) 50%, white 90%);
+    box-shadow: inset 0px 0px 50px 30px #9c2a2a2d,
+        inset 0px 0px 10px 10px #ffffffb6,
+        -0.5px -0.5px 1px 1px #9c2a2abe;
+}
+
+#tecladoVirtual {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.53) 50%, white 90%);
     box-shadow: inset 0px 0px 50px 30px #9c2a2a4f,
         inset 0px 0px 10px 10px #ffffff,
         -0.5px -0.5px 1px 1px #9c2a2afd;
+    /* display: flex; */
 }
 
-form:has(input:focus) #tecladoVirtual,
-form:has(input:focus-within) #tecladoVirtual {
-    display: flex;
+#tecladoToggle,
+#cerrarTecladoBtn {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background: rgba(243, 127, 127, 0.358);
+    color: white;
+    font-weight: 900;
+    font-size: x-large;
+    border-radius: 10px;
+    z-index: 9;
+    box-shadow: -2px -1px 1px 2px rgba(168, 60, 60, 0.358);
+    border: none;
 }
+
+#tecladoToggle:hover::after,
+#cerrarTecladoBtn:hover::after,
+#backspaceKey:hover::after,
+#revealPassword:hover::after {
+    position: absolute;
+    font-size: large;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0.934);
+    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.553);
+    border-radius: 8px;
+    display: block;
+    padding: 10px;
+    font-family: monospace;
+    line-height: 1.4;
+}
+
+#tecladoToggle:hover::after {
+    content: "Mostrar minúsculas";
+    top: 40px;
+    right: 10px;
+}
+
+#backspaceKey:hover::after {
+    content: "Botón de retroceso";
+    margin-top: 16px;
+    right: 1px;
+}
+
+#revealPassword:hover::after {
+    content: "Mostrar";
+    margin-top: 0px;
+    right: -27px;
+    color: white;
+    /* font-size: x-small; */
+}
+
+#cerrarTecladoBtn {
+    font-size: medium;
+}
+
+#cerrarTecladoBtn:hover::after {
+    content: "Cerrar teclado";
+    top: 32px;
+    left: 32px;
+}
+
+#tecladoToggle:hover,
+#cerrarTecladoBtn:hover {
+    cursor: pointer;
+    background: rgba(249, 197, 197, 0.671);
+}
+
+#tecladoToggle:focus,
+#cerrarTecladoBtn:focus {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 38x;
+    height: 38px;
+    margin-left: 1px;
+    margin-right: 5px;
+    cursor: pointer;
+    background: rgba(144, 56, 56, 0.795);
+    box-shadow: -1px 0px 1px 1px rgba(168, 60, 60, 0.358);
+    padding: 1px;
+    padding-bottom: 2px;
+}
+
+/* form:has(input:focus) .teclados>*,
+form:has(input:focus-within) .teclados>* {
+    display: flex;
+    } */
 
 /* #tecladoVirtual>span { */
-#tecladoVirtual>button {
+.teclados>button {
     border: none;
     font-weight: 600;
     border-radius: 6px;
@@ -318,8 +429,44 @@ form:has(input:focus-within) #tecladoVirtual {
     box-shadow: -2px -1px 1px 2px rgb(175, 220, 253);
 }
 
+#cambiarTeclado {
+    z-index: 9;
+    /* align-self: start; */
+    /* margin-right: 78px; */
+    /* text-align: center;
+    justify-content: center;
+    align-content: center; */
+    position: absolute;
+    /* margin-bottom: 107px; */
+    margin-bottom: 8px;
+    margin-right: 293px;
+    /* left: 21%;
+    top: 63.7%; */
+    align-self: end;
+    /* margin-right: 78px; */
+    /* text-align: center; */
+}
+
+#cerrarTeclado {
+    z-index: 9;
+    /* align-self: start; */
+    /* margin-right: 78px; */
+    /* text-align: center;
+    justify-content: center;
+    align-content: center; */
+    position: absolute;
+    /* margin-bottom: 107px; */
+    margin-bottom: 8px;
+    margin-left: 293px;
+    /* left: 21%;
+    top: 63.7%; */
+    align-self: end;
+    /* margin-right: 78px; */
+    /* text-align: center; */
+}
+
 /* #tecladoVirtual>span:hover { */
-#tecladoVirtual>button:hover {
+.teclados>button:hover {
     cursor: pointer;
     /* background-color: rgb(175, 220, 253); */
     background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.822) 50%, white 99%);
@@ -346,7 +493,7 @@ form:has(input:focus-within) #tecladoVirtual {
 /* #tecladoVirtual>span:focus,
 #tecladoVirtual>span:focus-within { */
 /* #tecladoVirtual>button:focus, */
-#tecladoVirtual>button:focus-within {
+.teclados>button:focus-within {
     box-shadow: -1px -1px 1px 1px #000000b9;
     padding-left: 0px;
     padding-right: 0px;
