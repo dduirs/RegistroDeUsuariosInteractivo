@@ -6,35 +6,35 @@ for (letter in keyValues) {
     keysArray.push(keyValues[letter]);
 }
 
-// const formulario = document.getElementById("registro");
-var inputActual;
+let inputActualString;
+let inputActualElement;
 
-const nombre = document.querySelector("#nombre");
-const correo = document.querySelector("#correo");
-const password = document.querySelector("#contrasena");
-const password2 = document.querySelector("#contrasena2");
+var nombre = document.querySelector("#nombre");
+var correo = document.querySelector("#correo");
+var password = document.querySelector("#contrasena");
+var password2 = document.querySelector("#contrasena2");
 
 function inputActualizar(input) {
+    inputActualString = input;
     if (input == "nombre") {
+        console.log("return nombre = " + nombre);
         return nombre;
     }
     else if (input == "correo") {
+        console.log("return correo = " + correo);
         return correo;
     }
-    else if (input == "password") {
+    else if (input == "contrasena") {
+        console.log("return password = " + password);
         return password;
     }
-    else if (input == "password2") {
+    else if (input == "contrasena2") {
+        console.log("return password2 = " + password2);
         return password2;
     }
-    // else if (inputActual == "formulario") {
-    //     formulario.focus();
-    // } 
-    // else {
-    //     var inputFocus = document.getElementById(inputActual);
-    //     inputFocus.focus();
-    // }
-    console.log("inputActual = " + inputActual);
+    else {
+        return formEnviarBtn;
+    }
 }
 
 function cargarTecladoVirtual() {
@@ -45,154 +45,65 @@ function cargarTecladoVirtual() {
     keys += '<button id="BackspaceKey">←</button>'; // add Backspace key
     teclado.innerHTML = keys;
 
-    // var keyListener = document.getElementsByClassName("keys");
     const keyListener = document.querySelectorAll(".keys");
     keyListener.forEach(key => {
-        key.addEventListener('click', () => {
-            focusInput();
+        key.addEventListener('click', (e) => {
+            focusInput(e.target.id);
         });
     });
 }
 
-// var a = keysArray[key];
-// input = document.getElementById('"' + a + '"');
-// console.log(keysArray[key]);
-// console.log("input = " + input);
-// // input.removeEventListener('onmouseup', focusInput(actual));
-// // input.addEventListener('onmouseup', focusInput(actual));// inputActual.innerText += e.target.id;
-// input.addEventListener('onmouseup', focusInput());// inputActual.innerText += e.target.id;
-// console.log("    Added listener for key index " + key);
-// }
-
-// var keyListener = document.getElementsByClassName("keys");
-// for (i = 0; keyListener.length; i++) {
-//     keyListener[i].addEventListener('click', (e) => {
-//         inputActual.innerText += e.target.id;
-//     })
-// }
-// }
-
 const formEnviarBtn = document.getElementById("enviar");
 const formResetBtn = document.getElementById("resetForm");
-// const formInputs = document.querySelector("#inputs").getElementsByTagName("input");
 
 function tecladoListeners() {
-    // nombre.addEventListener('click', () => {
-    //     inputActual(nombre);
-    // })
     nombre.addEventListener('focus', () => {
         mostrarTecladoEscondeEnviar();
-        // activarKeyListeners(nombre);
-        // activarKeyListeners();
-        teclado.removeEventListener('focusout', this);
-        // tecladoVirtual.addEventListener('onmouseup', () => {
-        //     // activarKeyListeners();
-        //     nombre.focus();
-        // });
-        inputActual = inputActualizar("nombre");
-        console.log("inputActual updated = " + inputActual);
+        inputActualElement = inputActualizar("nombre");
+        console.log("inputActual updated = " + inputActualElement);
     })
-    // nombre.addEventListener('focusout', () => {
-    //     escondeTecladoMostrarEnviar();
-    // })
     correo.addEventListener('focus', () => {
         mostrarTecladoEscondeEnviar();
-        // activarKeyListeners(correo);
-        // tecladoVirtual.removeEventListener('focusout', this);
-        // tecladoVirtual.childNodes.addEventListener('onmouseup', () => {
-        //     correo.focus();
-        // });
-        inputActual = inputActualizar("correo");
-        console.log("inputActual updated = " + inputActual);
+        inputActualElement = inputActualizar("correo");
+        console.log("inputActual updated = " + inputActualElement);
     })
-    // correo.addEventListener('focusout', () => {
-    //     escondeTecladoMostrarEnviar();
-    // })
 
     password.addEventListener('focus', () => {
         mostrarTecladoEscondeEnviar();
-        // activarKeyListeners(password);
-        // tecladoVirtual.removeEventListener('focusout', this);
-        // tecladoVirtual.childNodes.addEventListener('onmouseup', () => {
-        //     password.focus();
-        // });
-        inputActual = inputActualizar("password");
-        console.log("inputActual updated = " + inputActual);
+        inputActualElement = inputActualizar("contrasena");
+        console.log("inputActual updated = " + inputActualElement);
     })
-    // password.addEventListener('focusout', () => {
-    //     escondeTecladoMostrarEnviar();
-    // })
     password2.addEventListener('focus', () => {
         mostrarTecladoEscondeEnviar();
-        // activarKeyListeners(password2);
-        // tecladoVirtual.removeEventListener('focusout', this);
-        // tecladoVirtual.childNodes.addEventListener('onmouseup', () => {
-        //     password2.focus();
-        // });
-        inputActual = inputActualizar("password2");
-        console.log("inputActual updated = "+inputActual);
+        inputActualElement = inputActualizar("contrasena2");
+        console.log("inputActual updated = " + inputActualElement);
     })
-    // password2.addEventListener('focusout', () => {
-    //     escondeTecladoMostrarEnviar();
-    // })
-
-    // tecladoVirtual.addEventListener('click', () => {
-    //     inputActualizar("else");
-    //     console.log("inputActual updated = "+inputActual);
-    // })
-    // tecladoVirtual.addEventListener('focusout', () => {
-    //     escondeTecladoMostrarEnviar();
-    //     // inputActualizar("else");
-    //     // console.log("inputActual updated = "+inputActual);
-    // })
-    // console.log(formEnviarBtn);
-    // console.log(formResetBtn);
 }
 
-// function activarKeyListeners(actual) {
-// var keyListener = document.getElementsByClassName("keys");
-// if (inputActual == "nombre") {
-// inputActual = "nombre"
-// var input;
-// for (let key in keysArray) {
-//     var a = keysArray[key];
-//     input = document.getElementById('"'+a+'"');
-//     console.log(keysArray[key]);
-//     console.log("input = " + input);
-//     // input.removeEventListener('onmouseup', focusInput(actual));
-//     input.addEventListener('onmouseup', focusInput(actual));// inputActual.innerText += e.target.id;
-//     console.log("    Added listener for key index " + key);
-// }
-// console.log("activarKeyListeners(actual) actual = " + actual);
-// console.log("activarKeyListeners(actual) actual = " + actual);
-//     }
-//     else if (inputActual == "correo") {
-//         inputActual = "correo"
-//     }
-//     else if (inputActual == "password") {
-//         inputActual = "password"
-//     }
-//     else if (inputActual == "password2") {
-//         inputActual == "password2"
-//     }
-//     else if (inputActual == "formulario") {
-//         formulario.focus();
-//     }
+var focusActualElement;
 
-// }
-// }
-var focusActual;
-
-function focusInput() {
-    // input.focus();
-    focusActual = inputActualizar();
-    focusActual.focus();
-    console.log("fn(): focusInput success");
+function focusInput(targetId) {
+    if (inputActualString == "nombre") {
+        nombre.value += targetId;
+        nombre.focus();
+        console.log("return nombre = " + nombre);
+    }
+    else if (inputActualString == "correo") {
+        correo.value += targetId;
+        correo.focus();
+        console.log("return correo = " + correo);
+    }
+    else if (inputActualString == "contrasena") {
+        password.value += targetId;
+        password.focus();
+        console.log("return contrasena = " + password);
+    }
+    else if (inputActualString == "contrasena2") {
+        password2.value += targetId;
+        password2.focus();
+        console.log("return contrasena2 = " + password2);
+    }
 }
-// function focusInput(input) {
-//     input.focus();
-//     console.log("fn(): focusInput input = " + input);
-// }
 
 function mostrarTecladoEscondeEnviar() {
     formEnviarBtn.style.zIndex = 0;

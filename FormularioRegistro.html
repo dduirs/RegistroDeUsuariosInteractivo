@@ -48,7 +48,7 @@ uno de cada uno de los siguientes cuatro grupos de caracteres:
             Numéricos: 0 a 9
             Caracteres especiales: !#$%&'()*+,-./:;<=>?@[\]^_`{|}~" minlength="8" pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$"
                     tabindex="3">
-                    <button type="button" id="revealPassword">
+                    <button type="button" id="revealPassword" tabindex="4">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M12 4C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4Zm0 12.5c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24
                                 5-5 5Zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3Z" fill="black">
@@ -59,17 +59,18 @@ uno de cada uno de los siguientes cuatro grupos de caracteres:
                     <span id="passwordMismatchError"></span>
                      
                     <input type="password" id="contrasena2" name="contrasena2" required="required" minlength="8" title="Las contraseñas deben ser iguales" 
-                    tabindex="4" pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
+                    tabindex="5" pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
 
                 </div>
             </form>
             <footer id="formFooter">
-                <input form="registro" type="button" id="resetForm" value="Restablecer" tabindex="9">
-                <button form="registro" type="submit" id="enviar" tabindex="10">Registrarse</button>
+                <input form="registro" type="button" id="resetForm" value="Restablecer" tabindex="8">
+                <button form="registro" type="submit" id="enviar" tabindex="9">Registrarse</button>
             </footer>
-            <div id="tecladoVirtual">
+            <div id="tecladoVirtual" class="teclados" tabindex="6">
         
             </div>
+
         </main>
     </div>
     
