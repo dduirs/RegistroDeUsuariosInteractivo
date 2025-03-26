@@ -18,7 +18,7 @@ toggle.addEventListener('click', () => {
     toggleTeclado(true);
 });
 toggle.addEventListener('focus-within', () => {
-    toggle.style.background = rgba(145, 48, 48, 0.7);
+    toggle.style.background = "#913030";
 });
 
 cerrarBtn.addEventListener('click',()=>{
@@ -31,12 +31,12 @@ function toggleTeclado(tecladoVisible) {
             tecladoMinu.style.display = "flex";
             teclado.style.display = "none";
             console.log("tecladoMinu.display != flex    event fired");
-            toggle.style.background = rgba(249, 197, 197, 0.671);
+            toggle.style.background = "#f9c5c5";
         } else {
             tecladoMinu.style.display = "none";
             teclado.style.display = "flex";
             console.log("else (tecladoMinu.display == flex) event fired");
-            toggle.style.background = rgba(243, 127, 127, 0.358);
+            toggle.style.background = "#f37f7f";
         }
     } else {
         tecladoMinu.style.display = "none";
@@ -60,15 +60,9 @@ function inputActualizar(input) {
 function cargarTecladoVirtual(tecladoSelected, arrayDeKeys) {
     let keys = "";
     for (let key in arrayDeKeys) {
-        // if (Number(arrayDeKeys[key])) {
         keys += '<button id="' + arrayDeKeys[key] + '" class="keys">' + arrayDeKeys[key] + '</button>';
-        // } else if (arrayDeKeys[key] == arrayDeKeys[key].toUpperCase()) {
-        //     keys += '<button id="' + arrayDeKeys[key] + 'U" class="keys">' + arrayDeKeys[key] + '</button>';
-        // } else {
-        //     keys += '<button id="' + arrayDeKeys[key] + 'L" class="keys">' + arrayDeKeys[key] + '</button>';
-        // }
     }
-    keys += '<button id="backspaceKey" class="keys">←</button>'; // add Backspace key
+    keys += '<button id="backspaceKey" class="keys">←</button>'; // añade Botón de retroceso key
     tecladoSelected.innerHTML = keys;
 }
 
@@ -85,17 +79,6 @@ const formEnviarBtn = document.getElementById("enviar");
 const formResetBtn = document.getElementById("resetForm");
 
 function tecladoListeners() {
-    nombre.addEventListener('focus', () => {
-        mostrarTecladoEscondeEnviar();
-        inputActualizar("nombre");
-    })
-    // nombre.addEventListener('focusout', () => {
-    //     escondeTecladoMostrarEnviar();
-    // })
-    correo.addEventListener('focus', () => {
-        mostrarTecladoEscondeEnviar();
-        inputActualizar("correo");
-    })
     password.addEventListener('focus', () => {
         mostrarTecladoEscondeEnviar();
         inputActualizar("contrasena");
@@ -156,9 +139,6 @@ function mostrarTecladoEscondeEnviar() {
     toggleTeclado(false);
     toggle.style.display = "initial";
     cerrarBtn.style.display = "initial";
-    // teclado.style.display = "flex";
-    // tecladoVirtual.scrollIntoView(true);
-    // teclado.scrollIntoView({ overflow: "scroll", behavior: "smooth", block: "end", inline: "nearest" });
 }
 
 function escondeTecladoMostrarEnviar() {
@@ -171,7 +151,6 @@ function escondeTecladoMostrarEnviar() {
     toggle.style.display = "none";
     cerrarBtn.style.display = "none";
     document.getElementById("toTopClose").innerText = "Ir al principio";
-    // teclado.style.display = "none";
 }
 
 document.addEventListener("DOMContentLoaded", () => {

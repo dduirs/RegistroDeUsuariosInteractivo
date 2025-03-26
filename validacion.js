@@ -1,25 +1,4 @@
-// "use strict";   // The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
-                // With strict mode, you can not, for example, use undeclared letiables.
-
-// alert("Entra tus detalles para registrar usuario nuevo.");
-
-// usar POST no GET
-
-// "use strict";
-// let formElement1 = document.forms[0].elements[0];
-// formElement1.setAttribute("style","color:blue");
-
-// let miVentana;
-// function abrir() { miVentana = window.open( "", "Log in",
-//     "height=200,width=700,location=yes,resizable=yes,scrollbars=yes" );
-// }
-// abrir();
-
-// confirm("Do you want to log in? "+location.pathname);
-
 const passwordView = document.getElementById("revealPassword");
-// let password = document.getElementById("contrasena");
-// let password2 = document.getElementById("contrasena2");
 const resetBtn = document.getElementById("resetForm");
 
 function ensenarContrasenar(){
@@ -43,7 +22,7 @@ function ensenarContrasenar(){
 passwordView.addEventListener('click',()=>{
     ensenarContrasenar();
 });
-// TODO: 
+
 
 function comprobarPasswordsMatch(){
 const errorPassword = document.getElementById("passwordMismatchError");
@@ -67,106 +46,6 @@ errorPassword.textContent = "No coinciden";
  }
 }
 
-// password2.addEventListener('blur',()=>{
-//     comprobarPasswordsMatch();
-//     });
-
-    // Note: Input restrictions are not foolproof, and JavaScript provides many ways to add illegal input. 
-    // To safely restrict input, it must also be checked by the receiver (the server)! 
-
-// let formElement2 = document.getElementById("nombre").form;
-// formElement2.elements[1].setAttribute("style","color:red");
-
-// let nombre = document.getElementById("nombre");
-
-// nombre.addEventListener('focusout',()=>{
-//     if((/^\s{2}|[^a-zA-Z]/.test(nombre.value))){ // \s{2}|[^a-zA-Z]
-//         console.log("No válido: "+nombre.value);
-//         birthday.setCustomValidity("No válido");
-//     }else{
-//         birthday.setCustomValidity("");
-//         console.log("válido: "+nombre.value);
-//     }
-// });
-
-// let birthday = document.getElementById("cumpleanos");
-
-// // birthday.setCustomValidity("noCambiado");
-
-// birthday.addEventListener('focusout',()=>{
-//     if(!(birthday.value > new Date().getDate)){
-//         birthday.setCustomValidity("");
-//     }
-//     else if((birthday.value - new Date().getDate) < 110){
-//         birthday.setCustomValidity("");
-//     }else{
-//         birthday.setCustomValidity("No valido");
-//     }
-// });
-
-//TODO: check birthday validity is working;
-
-
-
-
-// document.getElementById('enviar').addEventListener('click', validar, false);
-
-// valor = document.getElementById("corro").value;
-// if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
-// return false;}
-
-// /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/  email regex
-
-// /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/ password regex
-
-    // password must contain 1 number (0-9)
-    // password must contain 1 uppercase letters
-    // password must contain 1 lowercase letters
-    // password must contain 1 non-alpha numeric character
-    // password is 8-16 characters with no space
-
-
-
-// const email = document.getElementById("mail");
-
-// email.addEventListener("input", function (event) {
-//   if (email.validity.typeMismatch) {
-//     email.setCustomValidity(
-//       "¡Se esperaba una dirección de correo electrónico!",
-//     );
-//   } else {
-//     email.setCustomValidity("");
-//   }
-// });
-
-// alert(window.navigator.userAgent);
-
-
-// alert(window.screen.height);
-
-// const options = {
-//     enableHighAccuracy: true,
-//     timeout: 5000,
-//     maximumAge: 0,
-//   };
-  
-//   function success(pos) {
-//     const crd = pos.coords;
-  
-//     console.log("Your current position is:");
-//     console.log(`Latitude : ${crd.latitude}`);
-//     console.log(`Longitude: ${crd.longitude}`);
-//     console.log(`More or less ${crd.accuracy} meters.`);
-//   }
-  
-//   function error(err) {
-//     console.warn(`ERROR(${err.code}): ${err.message}`);
-//   }
-  
-//   navigator.geolocation.getCurrentPosition(success, error, options);
-
-// Aa1234!2
-
 resetBtn.addEventListener('click', ()=>{
     if(confirm("¿Seguro que quieres borrar todo?")){
         resetBtn.setAttribute("type","reset");
@@ -177,48 +56,21 @@ resetBtn.addEventListener('click', ()=>{
 let formSendBtn = document.getElementById("enviar");
 formSendBtn.addEventListener('click',()=>
     {
-    // let formValid = true;
-    // let a = 0;
     password2.blur();
         if(document.forms[0].checkValidity()){
             alert("Los datos se han enviado correctamente");
-            // alert("Los datos han enviado correctamente a las "+ new Date().getHours +" y "+ new Date().getMinutes);
-
         }
-    //     else{
-    //         formValid = false;
-    //         // break;
-    //     }
-    //     a++;
-    // // for(let element in document.forms[0].elements){
-    // //     if(element.checkValidity()){
-    // //         alert("Los datos son validos "+a);
-    // //     }
-    // //     else{
-    // //         formValid = false;
-    // //         break;
-    // //     }
-    // //     a++;
-    
-    // if(formValid){
-    //     // alert("Los datos han enviado correctamente");
-    //     document.forms[0].requestSubmit(formSendBtn);
-    // }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
     form.addEventListener("submit", () => {
-        // event.preventDefault();
         const formData = new FormData(form);
         console.log(formData);
 
-        // const formData = new FormData(form)
         for (let item of formData) {
             if(item[0] == "nombre" || item[0] == "correo" || item[0] == "contrasena"){
-                // console.log(item);
                 sessionStorage.setItem(item[0],item[1]);
-                //TODO: make items case insensitive
                 console.log(item[0]+" guardado");
             }
         }
