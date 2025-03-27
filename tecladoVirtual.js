@@ -30,12 +30,10 @@ function toggleTeclado(tecladoVisible) {
         if (tecladoMinu.style.display != "flex") {
             tecladoMinu.style.display = "flex";
             teclado.style.display = "none";
-            console.log("tecladoMinu.display != flex    event fired");
             toggle.style.background = "#f9c5c5";
         } else {
             tecladoMinu.style.display = "none";
             teclado.style.display = "flex";
-            console.log("else (tecladoMinu.display == flex) event fired");
             toggle.style.background = "#f37f7f";
         }
     } else {

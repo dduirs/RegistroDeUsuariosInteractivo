@@ -357,10 +357,11 @@ address {
 }
 
 #revealPassword:hover::after {
-    content: "Mostrar";
+    content: "Mostrar/Ocultar";
     margin-top: 0px;
     right: -27px;
     color: white;
+    font-size: medium;
 }
 
 #cerrarTecladoBtn {

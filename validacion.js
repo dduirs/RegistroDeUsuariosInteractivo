@@ -66,12 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
     form.addEventListener("submit", () => {
         const formData = new FormData(form);
-        console.log(formData);
+        // console.log(formData);
 
         for (let item of formData) {
             if(item[0] == "nombre" || item[0] == "correo" || item[0] == "contrasena"){
                 sessionStorage.setItem(item[0],item[1]);
-                console.log(item[0]+" guardado");
+                // console.log(item[0]+" guardado");
             }
         }
     })

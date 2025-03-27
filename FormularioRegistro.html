@@ -31,7 +31,9 @@
                 <div id="inputs">
                     <input type="text" id="nombre" name="nombre" placeholder=" " autocomplete="given-name"
                         required="required" autocapitalize="words" title="Escribe tu nombre completo" minlength="5"
-                        tabindex="1" autofocus pattern="/([a-zA-Z]{2,20}[\s{2,}]){3}/">
+                        tabindex="1" autofocus pattern="((([A-Za-z][\u00C1\u00C9\u00CD\u00D3\u00DA\u00DC\u00E1\u00E9\u00ED\u00F3\u00FA\u00FC\u00D1\u00F1]*){2,30}[\s]){1,5}([A-Za-z][\u00C1\u00C9\u00CD\u00D3\u00DA\u00DC\u00E1\u00E9\u00ED\u00F3\u00FA\u00FC\u00D1\u00F1]*){2,30}){2,5}">
+                        <!-- pattern="([a-zA-Z]{2,30}[\t\h]){2,5}[a-zA-Z]{2,30}"> -->
+                        <!-- pattern="^(([A-Za-z]{2,30}[\s]){1,5}([A-Za-z]){2,30}){2,5}$"> -->
                     <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.es" autocomplete="email"
                         required="required" title="Escribe un correo electrónico válido" tabindex="2"
                         pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$">
