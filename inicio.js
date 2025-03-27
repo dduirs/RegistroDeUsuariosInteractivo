@@ -4,4 +4,4 @@ function mostrarNombre(){
 }
 document.addEventListener("DOMContentLoaded", () => {
     mostrarNombre();
-})
+});
